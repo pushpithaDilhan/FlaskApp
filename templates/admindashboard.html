@@ -1,0 +1,22 @@
+{% extends "includes/layout.html" %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    
+    <div class="navbar-header">      
+      <a class="navbar-brand" href="">{{ admin }}</a>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">          
+      <ul class="nav navbar-nav navbar-right">        
+         <li><a href="/viewusers">View Users</a></li>   
+         <li><a href="/">Sign out</a></li>          
+      </ul>    
+    </div>
+
+  </div>  
+</nav>
+{% endblock %}

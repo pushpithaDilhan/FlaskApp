@@ -1,0 +1,35 @@
+{% extends "includes/layout.html" %}
+
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+<div class="container panel col-sm-4" style="float: none;margin: 0 auto; margin-top:10%;" >
+<h1>Demo Application</h1>
+
+<form method="POST">    
+
+  <div class="form-group"><span class="glyphicon glyphicon-user" style="font-size: 30px;"></span>
+    <label for="text">Username </label>
+    <input type="text" class="form-control" name="username">
+  </div>
+
+  <div class="form-group"><span class="glyphicon glyphicon-lock" style="font-size: 30px;"></span>
+    <label for="pwd">Password</label>
+    <input type="password" class="form-control" name="password">
+  </div>
+
+  <div class="checkbox">
+    <label><input type="checkbox" value="1" name="role">Admin</label>
+  </div>
+
+  {% if error %}  
+    <div class="alert alert-danger"><strong>{{ error }}</strong></div>
+  {% endif %}
+
+  <button class="btn btn-success" type="submit">Login</button>
+    
+</form>
+
+{% endblock%}

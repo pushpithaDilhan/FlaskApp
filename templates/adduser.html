@@ -1,0 +1,70 @@
+{% extends "includes/layout.html" %}
+
+{% block title %}Add User{% endblock %}
+
+{% block body %}
+<div style="margin-left:20%;margin-right:20%;">
+
+  {% if user %}
+    <h2>Update User</h2>
+  {% else %}
+    <h2>Add User</h2>
+  {% endif %}
+  
+    <form method="POST">
+
+      <div class="form-group" >
+        <label>First Name:</label>
+        {% if user %}
+        <input class="form-control" type="text"  name="fname"  value={{user.fname}}>
+        {% else %}
+        <input class="form-control" type="text"  name="fname" placeholder="Enter First Name">
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label>Last Name</label>
+        {% if user %}
+        <input class="form-control" type="text"  name="lname"  value={{user.lname}}>
+        {% else %}
+        <input class="form-control" type="text"  name="lname" placeholder="Enter Last Name">
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label>Birth Date</label>
+        {% if user %}
+        <input class="form-control" type="text" name="bday"   value={{user.bdate}}>
+        {% else %}
+        <input class="form-control" type="text" name="bday"  placeholder="yyyy-mm-dd" >
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label>Username</label>
+        {% if user %}
+        <input class="form-control" type="text"  name="uname" value={{user.username}}>
+        {% else %}
+        <input class="form-control" type="text"  name="uname" placeholder="Enter Username" >
+        {% endif %}
+      </div>
+      
+      <div class="form-group">
+        <label>Password</label>        
+        <input class="form-control" type="password"  name="pwd"  placeholder="Enter Password"  >        
+      </div>
+
+      <div class="form-group">
+        <label>Retype Password</label>
+        <input class="form-control" type="password"  name="rpwd"  placeholder="Retype Password">       
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-success" >Submit</button>
+      </div>
+
+    </form>  
+  
+</div>
+
+{% endblock %}

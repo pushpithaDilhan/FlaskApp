@@ -1,0 +1,58 @@
+{% extends "includes/layout.html" %}
+
+
+{% block title %}View Users{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    
+    <div class="navbar-header">      
+      <a class="navbar-brand" href="">View Users</a>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">          
+      <ul class="nav navbar-nav navbar-right">        
+         <li><a href="/viewusers">View Users</a></li>   
+         <li><a href="/">Sign out</a></li>          
+      </ul>    
+    </div>
+
+  </div>  
+</nav>
+
+<div class="container panel" style="margin-top:5%;">
+	<div class="row">        
+    <div class="col-md-12">
+      <div class="table-responsive">                
+        <table id="mytable" class="table table-bordred table-striped">   
+                         
+          <thead>
+            <th>User ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Birth date</th>
+            <th></th>                      
+            <th></th>
+          </thead>
+            
+          <tbody>
+            {% for user in users %}
+            <tr>
+              <td>{{user.uid}}</td>
+              <td>{{user.fname}}</td>
+              <td>{{user.lname}}</td>
+              <td>{{user.bdate}}</td>
+              <td><a href="/adduser/{{user.uid}}"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+              <td><a href="/remove/{{user.uid}}"><button class="btn btn-danger btn-xs" ><span class="glyphicon glyphicon-trash"></span></button></a></p></td>
+            </tr>  
+            {% endfor %} 
+          </tbody>
+        
+        </table>            
+      </div>
+	  </div>
+  </div>
+  <a href="/adduser"><button class="btn btn-success">+Add User</button></a>
+</div>
+{% endblock %}

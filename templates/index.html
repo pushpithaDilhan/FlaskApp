@@ -1,0 +1,22 @@
+{% extends "includes/layout.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    
+    <div class="navbar-header">      
+      <a class="navbar-brand" href="">Demo Application</a>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">          
+      <ul class="nav navbar-nav navbar-right">        
+         <li><a href="/adduser">Register</a></li>   
+         <li><a href="/login">Login</a></li>          
+      </ul>    
+    </div>
+
+  </div>  
+</nav>
+{% endblock %}
