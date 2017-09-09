@@ -2,8 +2,6 @@ from flask import Flask,render_template,request,redirect,jsonify
 from flaskext.mysql import MySQL
 from flask_restful import Resource,Api,reqparse
 
-from Data import Data
-
 #add postman chrome extension to check the requests
 
 #create flask app
@@ -18,9 +16,6 @@ mysql = MySQL(app)
 api = Api(app)
 conn = mysql.connect()
 cur = conn.cursor()
-    
-#create data object/later implement with MYSQL
-data = Data()
 
 #---------------------------------------------------------------------------------------------------------------------
 class GetUser(Resource):
