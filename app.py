@@ -7,7 +7,7 @@ from flask_restful import Resource,Api,reqparse
 #create flask app
 app = Flask(__name__)
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'pushpe05'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
 app.config['MYSQL_DATABASE_DB'] = 'demoapplication'
 app.config['MYSQL_PORT'] = '3306'
 app.config['MYSQL_HOST'] = 'localhost'
